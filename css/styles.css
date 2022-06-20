@@ -1,0 +1,54 @@
+#principal {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+   }
+  
+    #principal #contenido_principal {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      width: 80%;
+      flex-basis: 70%;
+      margin-left: 40px;
+     }
+  
+    #principal .platillo {
+      flex-grow: 1;
+      flex-basis: 12rem;
+      height: 35vh;
+      border: 2px solid #444;
+      margin: 2rem;
+      box-shadow: 1px 1px 2px solid #ddd;
+      background: white;
+      cursor: pointer;
+      transition: all 600ms;
+     }
+  
+      #principal .platillo:hover {
+        background: black;
+        animation-name: tamaño;
+        animation-duration: 1.5s;
+        animation-timing-function: linear; 
+      }
+
+  .nombre_alimento {
+        font-size: 24px;
+        color: #df4e19;
+        text-shadow: 1px 1px 3px black;
+        text-align: center;
+        height: 7vh;
+        transition: all 300ms; 
+      }
+  
+        #principal .platillo h2:hover {
+          color: orange; 
+        }
+  
+      #principal .platillo .images__platillos {
+        width: 95%;
+        height: 20vh;
+        transition: all 300ms;
+        padding: 6px; 
+      }
