@@ -2,23 +2,25 @@
 
 const contenedor=document.getElementById("contenido_principal");
 
+
 function crearOpciones(){
 // debugger
 
-const alimentos=[1,2,3,4,5,6];
+ const alimentos=["Tacos","burritos","empanadas", "chilaquiles_verdes", "chilaquiles_rojos", "huevos", "emparedado", "arroz","choripan"];
 
 for (const opcion of alimentos) {
 
-
-    const div=document.createElement("");
-    div.innerHTML=opcion;
-    div.innerHTML="<img class=images__platillos src=images/burritos3.jpg alt=Burritos mexicanos title=Burritos mexicanos>"
+    const div=document.createElement("div");
+    div.className="platillo";
+    div.innerHTML=`<h2>${opcion}</h2>`
     contenedor.append(div);
 
-        
 }
 
+
 }
+
+crearOpciones();
 
 //-------------------------------------------------------------EVENTOS----------------------------------------------------------------
 
@@ -83,7 +85,8 @@ const opciones=document.getElementsByClassName("platillo");
 
 for (const opcion of opciones) {
 
-opcion.addEventListener("click",()=> opcion.style.background="black");
-opcion.addEventListener("dblclick",()=> opcion.style.background="white");
+opcion.addEventListener("click",()=>opcion.style.background="black");
+opcion.addEventListener("dblclick",()=>opcion.style.background="white");
 
 }
+
