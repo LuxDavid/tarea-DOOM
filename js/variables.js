@@ -9,8 +9,7 @@ class Ordenes {
 
 const contenedor=document.getElementById("contenido_principal");
 
-const usuario=document.getElementById("usuario");
-const clave=document.getElementById("clave");
+
 
 let correoUsuario=" ";
 
@@ -25,3 +24,7 @@ const alimentos=["Tacos","burritos","empanadas", "chilaquiles verdes", "chilaqui
 const carrito = [];
 
 const nombres=document.getElementsByClassName("nombre_alimento");
+
+const usuario=document.getElementById("usuario");
+
+const clave=document.getElementById("clave");

@@ -1,6 +1,4 @@
 //-------------------------------------------------------------EVENTOS----------------------------------------------------------------
-
-
 usuario.addEventListener("blur", (e)=>{
         
 correoUsuario= e.target.value;
@@ -27,10 +25,8 @@ document.addEventListener("submit", (e)=>{
 
 e.preventDefault(e)
 
-alert("Iniciando sesion")
 
 });
-
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------
@@ -50,27 +46,27 @@ function tocarBotones(){
     
     tocarBotones();
 
-    //-----------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-    //--------------------------------------------------INCORPORANDO DOOM----------------------------------------------------------
+    //--------------------------------------------------------------------------------------------------------------------------------
 
 function crearOpciones(){
 
             for (const opcion of alimentos) {
-    
+
                 const div=document.createElement("div");
                 div.className="platillo";
                 div.innerHTML=`<h2 class="nombre_alimento">${opcion}</h2>`
                 
                 contenedor.append(div);
 
-              div.addEventListener("click", ()=> agregarCarrito(`${opcion}`));
+      
+                div.addEventListener("click",()=>{
+                    
+                    carrito.push(`${opcion}`),
+                    localStorage.setItem("pedidos", carrito)
             
-            }
-    
+                })
+
+        }
     for (const opcion2 of opciones) {
 
         opcion2.addEventListener("click",()=>{
@@ -80,18 +76,18 @@ function crearOpciones(){
         
         })
         
-        opcion2.addEventListener("dblclick",()=>opcion2.style.background="white");
+        opcion2.addEventListener("dblclick",()=>{
+            
+        opcion2.style.background="white";
         
-        
-        }
+    
+        })
     }
     
-    crearOpciones();
+}
+
+crearOpciones();
 
 //-----------------------------------------------------------------------------------------------------------------------------------
 
-function agregarCarrito(opcion){
 
-carrito.push(opcion);
-
-}
