@@ -23,11 +23,11 @@ clave.addEventListener("blur", (e)=>{
 
 document.addEventListener("submit", (e)=>{
 
-e.preventDefault(e)
+e.preventDefault();
+sesionUsuario();
 
 
 });
-
 
 //--------------------------------------------------------------------------------------------------------------------------------------
 
@@ -46,7 +46,7 @@ function tocarBotones(){
     
     tocarBotones();
 
-    //--------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------
 
 function crearOpciones(){
 
@@ -62,7 +62,8 @@ function crearOpciones(){
                 div.addEventListener("click",()=>{
                     
                     carrito.push(`${opcion}`),
-                    localStorage.setItem("pedidos", carrito)
+                    localStorage.setItem("pedidos",JSON.stringify(carrito))
+                  
             
                 })
 
@@ -90,4 +91,31 @@ crearOpciones();
 
 //-----------------------------------------------------------------------------------------------------------------------------------
 
+function sesionUsuario(){
+    debugger
+const secion={
+correo:usuario.value,
+contraseña:clave.value,
+
+}
+
+let datosAlmacenados=JSON.stringify(secion)
+
+localStorage.setItem("user", datosAlmacenados);
+}
+
+function recuperarInformacion(){
+
+if(localStorage.getItem("user")){
+
+const infoSesion=JSON.parse(localStorage.getItem("user"));
+
+usuario.value=infoSesion.correo
+clave.value=infoSesion.contraseña
+
+}
+
+}
+
+recuperarInformacion();
 
